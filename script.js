@@ -1,3 +1,4 @@
+//Getting divs, buttons to add event and event listeners to handle events
 const mainSection = document.querySelector("#main-section");
 const home = document.querySelector("#home");
 const searchBar = document.querySelector("input");
@@ -6,7 +7,9 @@ const popUp = document.querySelector(".pop-up");
 const favSection = document.querySelector("#fav-section");
 const favourits = document.querySelector("#favs");
 const favMealsCards = document.querySelector("#fav-meals");
+//List conatining list of favourite meals
 const favsList = [];
+//Function to show user the their favourite meals
 async function showFavMeals() {
   let htmlCode = "";
   if (favsList.length < 1) {
@@ -17,6 +20,7 @@ async function showFavMeals() {
 		<h1>Here are your Favourit Meals </h1></div>`;
   }
   for (x of favsList) {
+    //Fetching URL by hitting API to get meal deatils based on meal id
     const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + x;
     const response = await fetch(url);
     const data = await response.json();
@@ -30,6 +34,7 @@ async function showFavMeals() {
   }
   favMealsCards.innerHTML = htmlCode;
   const removeFromFav2 = document.querySelectorAll(".remove-from-favs2");
+  //Adding Event Listener to buttons associated with each fav meal.
   for (let btn of removeFromFav2) {
     btn.addEventListener("click", function (e) {
       console.log("Inside event :" + e.target.getAttribute("data-id"));
@@ -41,7 +46,10 @@ async function showFavMeals() {
     });
   }
 }
+
+//Function to show details of the particular selected meal
 async function showMealDetails(mealid) {
+  //Fetching URL by hitting API to get meal deatils based on meal id
   const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealid;
   const response = await fetch(url);
   const data = await response.json();
@@ -58,16 +66,21 @@ async function showMealDetails(mealid) {
   		</div>
   		</div>`;
   popUp.innerHTML = htmlCode;
+  //Add Event Listener for close button
   const close = document.querySelector("#close");
   close.addEventListener("click", function (e) {
     popUp.style.display = "none";
   });
+  //Add Event Listener for video button
   const videoInstruction = document.querySelector("#video");
   videoInstruction.addEventListener("click", function (e) {
     window.open(`${meals[0].strYoutube}`);
   });
 }
+
+//Function to show meals based on the search parameter
 async function displayMeals(dishName) {
+  //Fetching URL by hitting API to get meal deatils based on meal name
   const url =
     "https://www.themealdb.com/api/json/v1/1/search.php?s=" + dishName;
   const response = await fetch(url);
@@ -89,6 +102,7 @@ async function displayMeals(dishName) {
     }
   }
   mealsCards.innerHTML = htmlCode;
+  //Add Event Listener on get details button to show details of meals
   const getDetails = document.querySelectorAll(".get-details");
   for (let btn of getDetails) {
     btn.addEventListener("click", function (e) {
@@ -96,6 +110,7 @@ async function displayMeals(dishName) {
       popUp.style.display = "block";
     });
   }
+  //Add Event Listener to add the meals to favourite section
   const addToFav = document.querySelectorAll(".add-to-favs");
   for (let btn of addToFav) {
     btn.addEventListener("click", function (e) {
@@ -104,6 +119,7 @@ async function displayMeals(dishName) {
     });
   }
 
+  //Add Event Listener to remove the meals to favourite section
   const removeFromFav = document.querySelectorAll(".remove-from-favs");
   for (let btn of removeFromFav) {
     btn.addEventListener("click", function (e) {
@@ -115,15 +131,21 @@ async function displayMeals(dishName) {
     });
   }
 }
+
+//Add Event Listener to get back to homepage from favourits page
 home.addEventListener("click", function (e) {
   favSection.style.display = "none";
   mainSection.style.display = "block";
 });
+
+//Add Event Listener to go to favourits page from homepage page
 favourits.addEventListener("click", function (e) {
   mainSection.style.display = "none";
   favSection.style.display = "block";
   showFavMeals();
 });
+
+//Add Event Listener on search input to display meals based on search parameter
 searchBar.addEventListener("keyup", (e) => {
   displayMeals(e.target.value);
 });
