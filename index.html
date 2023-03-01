@@ -9,24 +9,33 @@
 	<title>Meals Application</title>
 </head>
 <body>
+	<!-- Homepage Section HTML code for providing options of searching the meals and 
+		showing meals cards -->
 	<div id = "main-section">
+		<!-- Heading conatiner have main heading and show fav icon -->
 		<div id = "heading-conatiner">
 			<div id="logo"><h1><i class="fa-solid fa-plate-wheat"></i>     My Meals App </h1></div>
 			<div id = "favs"><h1></i><button class= "fav-btn"><i class="fa-regular fa-heart">   Favorite</i></button></h1></div>
 		</div>
+		<!-- Search Section -->
 		<div id= "search-meals">
 			<h2>Let's Find Your Ideal Meal</h2>
 			<i class="fa-solid fa-magnifying-glass-arrow-right" style=" font-size: xx-large;width: 3vw;"></i>
 			<input type="text" placeholder="Search" required>
 		</div>
+		<!-- Meals Cards Section -->
 		<div id = "meals-cards"></div>
+		<!-- Showing Meals Deatils Section -->
 		<div class = "pop-up"></div>
 	</div>
+	<!-- Favourite Section HTML Code -->
 	<div id = "fav-section">
+		<!-- Heading conatiner have main heading and show home icon -->
 		<div id = "heading-conatiner">
 			<div id ="logo"><h1><i class="fa-solid fa-plate-wheat"></i>     My Meals App </h1></div>
 			<div id = "home"><h1><button class= "fav-btn">Home</button></h1></div>
 		</div>
+		<!-- Favourite Meals Cards Section -->
 		<div id = "fav-meals"></div>
 	</div>
 	<script type="text/javascript" src="script.js"></script>
