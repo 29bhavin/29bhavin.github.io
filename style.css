@@ -1,3 +1,4 @@
+/* Css for main body of the website */
 body {
   background-color: #4158d0;
   background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%)
@@ -5,9 +6,13 @@ body {
   background-size: cover;
   color: white;
 }
+
+/* making header conatiner flex to add in low divs in column format */
 #heading-conatiner {
   display: flex;
 }
+
+/* Add to favrouits button css */
 .fav-btn {
   width: 55%;
   font-size: 12px;
@@ -17,6 +22,8 @@ body {
   border-radius: 15px;
   background-color: white;
 }
+
+/* Managing widths of different different containers */
 #logo {
   width: 80%;
 }
@@ -28,10 +35,14 @@ body {
   width: 20%;
   text-align: center;
 }
+
+/* Search conatiner css */
 #search-meals {
   text-align: center;
   margin-bottom: 2vw;
 }
+
+/* Css for input box in search meals */
 #search-meals input {
   width: 70%;
   height: 7vh;
@@ -40,6 +51,8 @@ body {
   color: black;
   font-weight: bolder;
 }
+
+/* Css applied on the meals cards */
 #meals-cards {
   display: flex;
   flex-direction: row;
@@ -47,6 +60,8 @@ body {
   justify-content: center;
   margin: 2vw;
 }
+
+/* Css for img section in cards */
 #meals-cards img {
   width: 18vw;
   height: 35vh;
@@ -57,6 +72,8 @@ body {
   height: 35vh;
   margin-top: 1vw;
 }
+
+/* Css for each meal image card */
 .meal-image {
   width: 30%;
   height: auto;
@@ -67,6 +84,8 @@ body {
   border-radius: 5%;
   padding-bottom: 15px;
 }
+
+/* Css applied on the modal popup for details of meals */
 .pop-up {
   background-color: #4158d0;
   background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%)
@@ -93,6 +112,8 @@ body {
   text-align: left;
   margin-left: 1vw;
 }
+
+/* Favourits Page CSS */
 #fav-section {
   display: none;
 }
@@ -100,6 +121,7 @@ body {
   width: 100%;
   text-align: center;
 }
+/* Css applied on favourit meals cards */
 #fav-meals {
   display: flex;
   flex-direction: row;
@@ -107,6 +129,8 @@ body {
   justify-content: center;
   margin: 2vw;
 }
+
+/* Css for all the buttons on the site */
 .btn-cls {
   width: 35%;
   font-size: 21px;
